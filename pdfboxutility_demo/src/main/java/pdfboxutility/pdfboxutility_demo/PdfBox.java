@@ -15,14 +15,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 //This the class used to gget information from pdf.
-//Added one more line to check revert command from the feature branch after merging code to the master.
-
 public class PdfBox {
     private static Logger logger = LoggerFactory.getLogger(PdfBox.class);
 
     private static void executeUtility(String inputFilePath, String outputFileName, String pdfName) throws IOException {
 
-        logger.info("Executing the PDFBox utility which is used.");
+        logger.info("Executing the PDFBox utility");
         PrintWriter writer = new PrintWriter(new FileWriter(outputFileName));
 
         try (PDDocument document = PDDocument.load(new File(inputFilePath))) {
