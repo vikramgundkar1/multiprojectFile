@@ -14,7 +14,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
+//This the class used to gget information from pdf.
 public class PdfBox {
     private static Logger logger = LoggerFactory.getLogger(PdfBox.class);
 
@@ -43,7 +43,7 @@ public class PdfBox {
                     String umid = matcher.group(1).trim();
                     if (!processedumid.contains(umid)) {
                         if (i != 1) {
-                            writer.println("<TotalPages>" + (i - 1) + "</TotalPages>");
+                            writer.println("<TotalPage>" + (i - 1) + "</TotalPage>");
                             writer.println("<PDF>" + pdfName + "</PDF>");
                             writer.println("</MailSet>");
                         }
