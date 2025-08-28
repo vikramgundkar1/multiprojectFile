@@ -14,15 +14,13 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-//This the class used to gget information from pdf.
-//Added one more line to check revert command from the feature branch after merging code to the master.
 
 public class PdfBox {
     private static Logger logger = LoggerFactory.getLogger(PdfBox.class);
 
     private static void executeUtility(String inputFilePath, String outputFileName, String pdfName) throws IOException {
 
-        logger.info("Executing the PDFBox utility which is used.");
+        logger.info("Executing the PDFBox utility");
         PrintWriter writer = new PrintWriter(new FileWriter(outputFileName));
 
         try (PDDocument document = PDDocument.load(new File(inputFilePath))) {
@@ -45,7 +43,7 @@ public class PdfBox {
                     String umid = matcher.group(1).trim();
                     if (!processedumid.contains(umid)) {
                         if (i != 1) {
-                            writer.println("<TotalPage>" + (i - 1) + "</TotalPage>");
+                            writer.println("<TotalPages>" + (i - 1) + "</TotalPages>");
                             writer.println("<PDF>" + pdfName + "</PDF>");
                             writer.println("</MailSet>");
                         }
